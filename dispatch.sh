@@ -1,6 +1,7 @@
 cp payment.service /etc/systemd/system/dispatch.service
 dnf install golang -y
 useradd roboshop
+rm -rf /app
 mkdir /app
 curl -L -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatch-v3.zip
 cd /app
