@@ -48,7 +48,7 @@ APP_PREREQ(){
   PRINT Adding Application User
   id roboshop &>>LOG_FILE
   if [ $? -ne 0 ] ; then
-    useradd roboshop &>>LOG_FILE
+    useradd roboshop &>>LOG_FILE333
   fi
   STAT $?
 
