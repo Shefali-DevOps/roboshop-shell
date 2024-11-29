@@ -15,4 +15,4 @@ systemctl daemon-reload
 systemctl enable catalogue
 systemctl start catalogue
 dnf install mongodb-mongosh -y
-mongosh --host 172.31.87.128 </app/db/master-data.js
+mongosh --host 172.31.89.237 </app/db/master-data.js
