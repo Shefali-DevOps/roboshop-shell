@@ -15,8 +15,8 @@ STAT(){
   else
     echo -e "\e[31mFailure\e[0m"
     echo
-    echo "Refer the log file for more information : file path ${LOG_FILE}"
-    echo $1
+    echo "Refer the log file for more information : file path :  ${LOG_FILE}"
+    exit $1
   fi
 }
 
@@ -24,7 +24,7 @@ APP_PREREQ(){
   PRINT Adding Application User
   id roboshop &>>LOG_FILE
   if [ $? -ne 0 ] ; then
-    useradd roboshop &>>LOG_FILE333
+    useradd roboshop &>>LOG_FILE
   fi
   STAT $?
 
@@ -37,12 +37,12 @@ APP_PREREQ(){
   STAT $?
 
   PRINT Download Application Content
-  curl -o /tmp/{$component}.zip https://roboshop-artifacts.s3.amazonaws.com/{$component}-v3.zip &>>LOG_FILE
+  curl -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}-v3.zip &>>LOG_FILE
   STAT $?
 
   PRINT Extract Application Content
   cd {app_path} &>>LOG_FILE
-  unzip /tmp/{component}.zip &>>LOG_FILE
+  unzip /tmp/${component}.zip &>>LOG_FILE
   STAT $?
 }
 

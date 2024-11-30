@@ -8,7 +8,7 @@ STAT $?
 
 PRINT Enable Nginx 24 version
 dnf module enable nginx:1.24 -y &>>LOG_FILE
-STAT &?
+STAT $?
 
 PRINT Install Nginx
 dnf install nginx -y &>>LOG_FILE
