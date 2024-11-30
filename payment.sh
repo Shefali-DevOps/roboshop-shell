@@ -1,3 +1,10 @@
+source common.sh
+component=payment
+app_path=/app
+
+
+NODEJS
+
 cp payment.service /etc/systemd/system/payment.service
 dnf install python3 gcc python3-devel -y
 useradd roboshop
