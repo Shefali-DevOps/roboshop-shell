@@ -98,6 +98,21 @@ JAVA(){
 
 }
 
+PYTHON(){
+  SYSTEMD_SETUP
+
+  PRINT Install Python
+  dnf install python3 gcc python3-devel -y &>>LOG_FILE
+  STAT $?
+
+  APP_PREREQ
+
+  PRINT Download Dependencies
+  pip3 install -r requirements.txt &>>LOG_FILE
+  STAT $?
+
+}
+
 SCHEMA_SETUP() {
   if [ "$schema_setup" == "mongo" ]; then
     PRINT COpy MongoDB repo file
