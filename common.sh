@@ -29,11 +29,11 @@ APP_PREREQ(){
   STAT $?
 
   PRINT Remove old content
-  rm -rf {$app_path} &>>LOG_FILE
+  rm -rf ${app_path} &>>LOG_FILE
   STAT $?
 
   PRINT Create APP Directory
-  mkdir {$app_path}  &>>LOG_FILE
+  mkdir ${app_path}  &>>LOG_FILE
   STAT $?
 
   PRINT Download Application Content
