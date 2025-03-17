@@ -103,7 +103,7 @@ JAVA() {
 
 SCHEMA_SETUP() {
   if [ "$schema_setup" == "mongo" ]; then
-    PRINT COpy MongoDB repo file
+    PRINT Copy MongoDB repo file
     cp mongo.repo /etc/yum.repos.d/mongo.repo &>>$LOG_FILE
     STAT $?
 
