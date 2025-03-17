@@ -124,7 +124,7 @@ SCHEMA_SETUP() {
     STAT $?
 
     PRINT Load Master Data
-    mongosh --host 172.31.89.237 </app/db/master-data.js &>>$LOG_FILE
+    mongosh --host mongo.dev.shefalidevoops.shop </app/db/master-data.js &>>$LOG_FILE
     STAT $?
   fi
 
@@ -135,7 +135,7 @@ SCHEMA_SETUP() {
 
     for file in schema master-data app-user; do
       PRINT Load file - $file.sql
-      mysql -h 172.31.88.115 -uroot -pRoboShop@1 < /app/db/$file.sql &>>$LOG_FILE
+      mysql -h mysql.dev.shefalidevops.shop -uroot -pRoboShop@1 < /app/db/$file.sql &>>$LOG_FILE
       STAT $?
     done
 
